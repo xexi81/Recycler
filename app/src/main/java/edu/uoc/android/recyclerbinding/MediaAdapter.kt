@@ -26,8 +26,9 @@ class MediaAdapter (private val mediaList: List<Media>): RecyclerView.Adapter<Me
                 txtNombre.text = media.title
                 Glide.with(mediaThumb.context).load(media.url).into(mediaThumb)
 
+                // Toast sobre viewHolder en extensions.kt
                 itemView.setOnClickListener{
-                    it.context.toast(txtNombre.text.toString(), Toast.LENGTH_LONG)
+                    toast(txtNombre.text.toString(), Toast.LENGTH_LONG)
                 }
 
             }
