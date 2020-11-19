@@ -1,4 +1,4 @@
 package edu.uoc.android.recyclerbinding
 
-class Media (val name: String, val image: String) {
+class Media (val title: String, val url: String) {
 }

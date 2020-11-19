@@ -3,9 +3,10 @@ package edu.uoc.android.recyclerbinding
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import edu.uoc.android.recyclerbinding.databinding.ViewMediaItemBinding
 
-class MediaAdapter (val mediaList: List<Media>): RecyclerView.Adapter<MediaAdapter.MediaHolder>() {
+class MediaAdapter (private val mediaList: List<Media>): RecyclerView.Adapter<MediaAdapter.MediaHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MediaHolder {
         val binding = ViewMediaItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MediaHolder(binding)
@@ -21,7 +22,8 @@ class MediaAdapter (val mediaList: List<Media>): RecyclerView.Adapter<MediaAdapt
 
         fun render(media: Media) {
             with(binding) {
-                txtNombre.text = media.name
+                txtNombre.text = media.title
+                Glide.with(mediaThumb.context).load(media.url).into(mediaThumb)
             }
         }
     }

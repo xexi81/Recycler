@@ -6,14 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import edu.uoc.android.recyclerbinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    val mediaList: List<Media> = listOf()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         recyclerInit(binding)
     }
@@ -21,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     fun recyclerInit(binding: ActivityMainBinding) {
         binding.rvMedia.layoutManager = LinearLayoutManager(this)
-        val adapter = MediaAdapter(mediaList)
+        val adapter = MediaAdapter(getItems())
         binding.rvMedia.adapter = adapter
     }
 }
