@@ -7,7 +7,7 @@ import edu.uoc.android.recyclerbinding.databinding.ViewMediaItemBinding
 
 class MediaAdapter (val mediaList: List<Media>): RecyclerView.Adapter<MediaAdapter.MediaHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MediaHolder {
-        //val layoutInflater= LayoutInflater.from(parent.context)
+        val layoutInflater= LayoutInflater.from(parent.context)
         val binding = ViewMediaItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MediaHolder(binding)
     }
