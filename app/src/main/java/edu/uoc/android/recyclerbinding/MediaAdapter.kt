@@ -2,6 +2,7 @@ package edu.uoc.android.recyclerbinding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import edu.uoc.android.recyclerbinding.databinding.ViewMediaItemBinding
@@ -24,6 +25,11 @@ class MediaAdapter (private val mediaList: List<Media>): RecyclerView.Adapter<Me
             with(binding) {
                 txtNombre.text = media.title
                 Glide.with(mediaThumb.context).load(media.url).into(mediaThumb)
+
+                itemView.setOnClickListener{
+                    it.context.toast(txtNombre.text.toString(), Toast.LENGTH_LONG)
+                }
+
             }
         }
     }
