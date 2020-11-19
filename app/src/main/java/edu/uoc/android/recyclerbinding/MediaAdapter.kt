@@ -6,19 +6,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import edu.uoc.android.recyclerbinding.databinding.ViewMediaItemBinding
 
-class MediaAdapter (private val mediaList: List<Media>): RecyclerView.Adapter<MediaAdapter.MediaHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MediaHolder {
+class MediaAdapter (private val mediaList: List<Media>): RecyclerView.Adapter<MediaAdapter.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ViewMediaItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MediaHolder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: MediaHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.render(mediaList[position])
     }
 
     override fun getItemCount(): Int = mediaList.size
 
-    class MediaHolder(private val binding: ViewMediaItemBinding): RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ViewMediaItemBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun render(media: Media) {
             with(binding) {

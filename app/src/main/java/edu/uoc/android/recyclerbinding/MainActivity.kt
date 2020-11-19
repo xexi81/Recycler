@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     fun recyclerInit(binding: ActivityMainBinding) {
         binding.rvMedia.layoutManager = LinearLayoutManager(this)
-        val adapter = MediaAdapter(getItems())
-        binding.rvMedia.adapter = adapter
+        binding.rvMedia.adapter = MediaAdapter(getItems())
     }
 }
