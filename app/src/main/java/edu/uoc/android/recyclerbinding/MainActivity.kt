@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         recyclerInit(binding)
+
+        startActivity<MainActivity>()
+
     }
 
 
@@ -20,3 +23,5 @@ class MainActivity : AppCompatActivity() {
         binding.rvMedia.adapter = MediaAdapter(getItems())
     }
 }
+
+
